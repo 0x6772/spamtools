@@ -26,7 +26,7 @@ Just the "From/To" headers part of gr-sa-learn.sh.
 I run this nightly around 20:00 local. (So in case I want to
 actually *look* at the offending message more than just its headers,
 I've got a few hours to do that before gr-sa-leanr.sh nukes it from
-orbit.
+orbit.)
 
 ## watch_spam.sh
 Pretty trivial, but I found myself typing this too damn often.
