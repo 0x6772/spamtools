@@ -31,9 +31,9 @@ orbit.
 ## watch_spam.sh
 Pretty trivial, but I found myself typing this too damn often.
 
-tail(1)s Postfix's (or whatever your MTA is) maillog and
-procmail(1)'s user-specific log (you DO have LOGFILE set in
-~/.procmailrc, right?) in the background (which, since it's within a
+`tail(1)`s Postfix's (or whatever your MTA is) `maillog` and
+`procmail(1)`'s user-specific log (you DO have `LOGFILE` set in
+`~/.procmailrc`, right?) in the background (which, since it's within a
 shell script, detaches from the calling shell entirely), captures
 the pids of those two tail(1) processes, and emits them (so you can
 clean up the procs).
