@@ -41,6 +41,8 @@ MISSED_SPAM="~/Mail/missed-spam"
 ADDITIONAL_SPAM=""
 
 DELETED_HAM="~/Mail/deleted-ham"
+# XXX deal with mailboxes with spaces in their name in a sane way
+# (right now we just straight break)
 ADDITIONAL_HAM="~/Mail/Archives ~/Mail/Sent"
 # not walking all of ~/Mail, but try this for a bit, see if it
 # improves positive ratings and makes Thunderbird shut up a bit
