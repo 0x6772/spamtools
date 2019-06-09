@@ -52,27 +52,27 @@ ADDITIONAL_HAM="~/Mail/Archives ~/Mail/Sent"
 echo SPAM
 for i in ${MISSED_SPAM}
 do
-  path=`eval echo $i`
-  if [ -f $path ]
+  file_path=`eval echo $i`
+  if [ -f $file_path ]
   then
-    echo "  ${path}"
-    egrep '(^ *From|^ *Subject)' `eval echo ${path}`
-    sa-learn --spam --mbox --progress ${path} \
-      && cat /dev/null >| ${path}
+    echo "->${file_path}"
+    egrep '(^ *From|^ *Subject)' `eval echo ${file_path}`
+    sa-learn --spam --mbox --progress ${file_path} \
+      && cat /dev/null >| ${file_path}
   else
-    echo "  ${path} does not appear to be an mbox file."
+    echo "  ${file_path} does not appear to be an mbox file."
   fi
 done
 
 for i in ${ADDITIONAL_SPAM}
 do
-  path=`eval echo $i`
-  if [ -f $path ]
+  file_path=`eval echo $i`
+  if [ -f $file_path ]
   then
-    echo "  ${path}"
-    sa-learn --spam --mbox --progress ${path}
+    echo "->${file_path}"
+    sa-learn --spam --mbox --progress ${file_path}
   else
-    echo "  ${path} does not appear to be an mbox file."
+    echo "  ${file_path} does not appear to be an mbox file."
   fi
 done
 )
@@ -83,25 +83,25 @@ echo
 echo HAM
 for i in ${DELETED_HAM}
 do
-  path=`eval echo $i`
-  if [ -f $path ]
+  file_path=`eval echo $i`
+  if [ -f $file_path ]
   then
-    echo "  ${path}"
-    sa-learn --ham --mbox --progress ${path} \
-      && cat /dev/null >| ${path}
+    echo "->${file_path}"
+    sa-learn --ham --mbox --progress ${file_path} \
+      && cat /dev/null >| ${file_path}
   else
-    echo "  ${path} does not appear to be an mbox file."
+    echo "  ${file_path} does not appear to be an mbox file."
   fi
 done
 for i in ${ADDITIONAL_HAM}
 do
-  path=`eval echo $i`
-  if [ -f $path ]
+  file_path=`eval echo $i`
+  if [ -f $file_path ]
   then
-    echo "  ${path}"
-    sa-learn --ham --mbox --progress ${path}
+    echo "->${file_path}"
+    sa-learn --ham --mbox --progress ${file_path}
   else
-    echo "  ${path} does not appear to be an mbox file."
+    echo "  ${file_path} does not appear to be an mbox file."
   fi
 done
 )
